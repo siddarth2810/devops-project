@@ -5,7 +5,9 @@ packages {
 }
 
 oci "pkgs" {
-  name          = "saiyam911/devops-kube-proj"
+  name          = "siddarth0910/sid-devops"
+  layers        = ["split(packages.runtime)", "split(packages.dev)"]
+  isBase        = true
   cmd           = []
   entrypoint    = []
   envVars       = []
