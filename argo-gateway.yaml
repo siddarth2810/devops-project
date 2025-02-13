@@ -11,9 +11,9 @@ spec:
   - name: http
     port: 80
     protocol: HTTP
-    hostname: "sid-devops-aks.eastus.cloudapp.azure.com"
+    hostname: "sid-project-aks.eastus.cloudapp.azure.com"
   - name: https
-    hostname: "sid-devops-aks.eastus.cloudapp.azure.com"
+    hostname: "sid-project-aks.eastus.cloudapp.azure.com"
     port: 443
     protocol: HTTPS
     allowedRoutes:
@@ -22,15 +22,15 @@ spec:
     tls:
       mode: Terminate
       certificateRefs:
-      - name: sid-devops-aks-tls
+      - name: sid-project-aks-tls
         kind: Secret
         group: ""
   - name: argo-http
     port: 80
     protocol: HTTP
-    hostname: "sid-devops-aks.eastus.cloudapp.azure.com"
+    hostname: "sid-project-aks.eastus.cloudapp.azure.com"
   - name: argo-https
-    hostname: "sid-devops-aks.eastus.cloudapp.azure.com"
+    hostname: "sid-project-aks.eastus.cloudapp.azure.com"
     port: 443
     protocol: HTTPS
     allowedRoutes:
@@ -39,7 +39,7 @@ spec:
     tls:
       mode: Terminate
       certificateRefs:
-      - name: sid-devops-aks-tls
+      - name: sid-project-aks-tls
         kind: Secret
         group: ""
 

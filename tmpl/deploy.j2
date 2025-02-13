@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: my-app
-        image: docker.io/siddarth0910/sid-devops:v4
+        image: docker.io/siddarth0910/sid-devops:v5
         imagePullPolicy: Always
         env:
         - name: DB_USERNAME
@@ -86,9 +86,9 @@ spec:
   - name: http
     port: 80
     protocol: HTTP
-    hostname: "sid-devops-aks.eastus.cloudapp.azure.com"
+    hostname: "sid-project-aks.eastus.cloudapp.azure.com"
   - name: https
-    hostname: "sid-devops-aks.eastus.cloudapp.azure.com"
+    hostname: "sid-project-aks.eastus.cloudapp.azure.com"
     port: 443
     protocol: HTTPS
     allowedRoutes:
@@ -97,15 +97,15 @@ spec:
     tls:
       mode: Terminate
       certificateRefs:
-      - name: sid-devops-aks-tls
+      - name: sid-project-aks-tls
         kind: Secret
         group: ""
   - name: argo-http
     port: 80
     protocol: HTTP
-    hostname: "sid-devops-aks.eastus.cloudapp.azure.com"
+    hostname: "argo.sid-project-aks.eastus.cloudapp.azure.com"
   - name: argo-https
-    hostname: "sid-devops-aks.eastus.cloudapp.azure.com"
+    hostname: "argo.sid-project-aks.eastus.cloudapp.azure.com"
     port: 443
     protocol: HTTPS
     allowedRoutes:
@@ -114,7 +114,7 @@ spec:
     tls:
       mode: Terminate
       certificateRefs:
-      - name: sid-devops-aks-tls
+      - name: sid-project-aks-tls
         kind: Secret
         group: ""
 
@@ -128,7 +128,7 @@ spec:
   - name: app-gateway
     namespace: default
   hostnames:
-  - "sid-devops-aks.eastus.cloudapp.azure.com"
+  - "sid-project-aks.eastus.cloudapp.azure.com"
   rules:
   - matches:
     - path:

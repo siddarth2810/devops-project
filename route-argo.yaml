@@ -8,7 +8,7 @@ spec:
   - name: app-gateway
     namespace: default
   hostnames:
-  - "sid-devops-aks.eastus.cloudapp.azure.com"
+  - "sid-project-aks.eastus.cloudapp.azure.com"
   rules:
   - matches:
       - path:

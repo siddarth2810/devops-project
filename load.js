@@ -6,7 +6,7 @@ export const options = {
   duration: "30s",
 };
 
-const BASE_URL = "https://sid-devops-aks.eastus.cloudapp.azure.com";
+const BASE_URL = "https://sid-project-aks.eastus.cloudapp.azure.com";
 
 function demo() {
   const url = `${BASE_URL}`;
