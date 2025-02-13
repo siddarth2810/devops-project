@@ -8,7 +8,7 @@ spec:
   - name: app-gateway
     namespace: default
   hostnames:
-  - "argo.kubesimplify.com"
+  - "sid-devops-aks.eastus.cloudapp.azure.com"
   rules:
   - matches:
       - path:

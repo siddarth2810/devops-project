@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: my-app
-        image: docker.io/saiyam911/devops-project:{{ image_deploy_tag }}
+        image: docker.io/siddarth0910/sid-devops:v4
         imagePullPolicy: Always
         env:
         - name: DB_USERNAME
@@ -86,9 +86,9 @@ spec:
   - name: http
     port: 80
     protocol: HTTP
-    hostname: "app.kubesimplify.com"
+    hostname: "sid-devops-aks.eastus.cloudapp.azure.com"
   - name: https
-    hostname: "app.kubesimplify.com"
+    hostname: "sid-devops-aks.eastus.cloudapp.azure.com"
     port: 443
     protocol: HTTPS
     allowedRoutes:
@@ -97,15 +97,15 @@ spec:
     tls:
       mode: Terminate
       certificateRefs:
-      - name: app-kubesimplify-com-tls
+      - name: sid-devops-aks-tls
         kind: Secret
         group: ""
   - name: argo-http
     port: 80
     protocol: HTTP
-    hostname: "argo.kubesimplify.com"
+    hostname: "sid-devops-aks.eastus.cloudapp.azure.com"
   - name: argo-https
-    hostname: "argo.kubesimplify.com"
+    hostname: "sid-devops-aks.eastus.cloudapp.azure.com"
     port: 443
     protocol: HTTPS
     allowedRoutes:
@@ -114,7 +114,7 @@ spec:
     tls:
       mode: Terminate
       certificateRefs:
-      - name: argo-kubesimplify-com-tls
+      - name: sid-devops-aks-tls
         kind: Secret
         group: ""
 
@@ -128,7 +128,7 @@ spec:
   - name: app-gateway
     namespace: default
   hostnames:
-  - "app.kubesimplify.com"
+  - "sid-devops-aks.eastus.cloudapp.azure.com"
   rules:
   - matches:
     - path:
@@ -137,3 +137,4 @@ spec:
     backendRefs:
     - name: my-app-service
       port: 80
+
