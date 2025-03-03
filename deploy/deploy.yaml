@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: my-app
-        image: docker.io/siddarth0910/sid-devops:v5
+        image: docker.io/siddarth0910/sid-devops:v7
         imagePullPolicy: Always
         env:
         - name: DB_USERNAME

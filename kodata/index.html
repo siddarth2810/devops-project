@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>My 2025 Goals Diary</title>
+    <title>My Daily Learning Log</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -201,10 +201,11 @@
 
 <body>
     <div class="container">
-        <h2>Write your new year goals !</h2>
+        <h2>Record what you learned today</h2>
         <form action="/add_goal" method="post">
-            <input type="text" name="goal_name" placeholder="Enter your goal">
-            <button type="submit">Add Goal</button>
+            <input type="text" name="goal_name"
+                placeholder="Enter your learning entry (e.g., 01/01/2025 - Today I learned...)">
+            <button type="submit">Add Entry</button>
         </form>
         {{ if .goals }}
         <ul class="goal-list">
@@ -218,11 +219,13 @@
             </li>
             {{ end }}
         </ul>
+        {{ else }}
+        <p class="empty-diary">Your learning log is empty. Start by adding your first entry!</p>
         {{ end }}
     </div>
     <script>
         document.querySelectorAll('form').forEach(form => {
-            form.onsubmit = () => setTimeout(() => location.reload(), 500); // Reload page after a short delay
+            form.onsubmit = () => setTimeout(() => location.reload(), 500);
         });
     </script>
 </body>
